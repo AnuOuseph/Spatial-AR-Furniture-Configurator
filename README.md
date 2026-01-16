@@ -1,70 +1,122 @@
-# Getting Started with Create React App
+# Spatial — Interactive 3D Furniture Configurator (Prototype)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Spatial** is a web-based 3D furniture configurator that explores spatial UI patterns, real-time interaction, and AR-ready scene architecture.
 
-## Available Scripts
+The project focuses on building a **production-style 3D product viewer** rather than a visual demo, with an emphasis on scalability, usability, and future AR integration.
 
-In the project directory, you can run:
+> ⚠️ This project is an early-stage prototype. AR functionality is not fully implemented yet and is planned as a future extension.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Key Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Interactive 3D Product Viewer**
+  - Rotate, zoom, and pan furniture models in real time
+  - Camera constraints designed for product-style interaction
 
-### `npm test`
+- **Furniture Configuration**
+  - Switch between different furniture types (chair, table, sofa)
+  - Dynamic material and color selection
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Environment Presets**
+  - Multiple HDR environments to preview products under different lighting conditions
 
-### `npm run build`
+- **Real-World Scale (AR-Ready)**
+  - Furniture models designed with approximate real-world dimensions
+  - Scene architecture prepared for future WebXR / AR integration
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Product-Focused UI**
+  - Clean split layout between 3D viewer and configuration controls
+  - Inspired by real e-commerce and spatial product tools
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project Motivation
 
-### `npm run eject`
+The goal of this project was to explore how **3D and spatial interfaces** can be integrated into a product-oriented web application.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Rather than focusing on visual complexity, the emphasis was placed on:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- scene structure and scalability  
+- interaction design for 3D products  
+- preparing a foundation suitable for **AR experiences**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This project reflects an early exploration of workflows commonly used in **3D commerce, digital showrooms, and AR-enabled product platforms**.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## Architecture Overview
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The application is structured around three core layers:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 1. 3D Scene Layer
+- Built using **react-three-fiber**
+- Modular furniture models rendered based on selected product type
+- Lighting, environment, and camera controls separated from UI logic
 
-### Code Splitting
+### 2. Configuration & State Layer
+- React state manages:
+  - selected furniture
+  - material / color
+  - environment preset
+- Designed to scale toward persisted configurations (save/load)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 3. UI Layer
+- Product-style layout with:
+  - main viewer area
+  - configuration panel
+- Tailored for clarity and usability rather than experimentation
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Furniture Models
 
-### Making a Progressive Web App
+Furniture models are currently composed of primitive geometries (boxes, cylinders) to:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- keep focus on interaction and architecture
+- allow rapid iteration
+- avoid premature optimization
 
-### Advanced Configuration
+> In a production scenario, these would be replaced with optimized GLTF assets.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## Real-World Scaling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+All furniture elements are modeled with **approximate real-world dimensions (meters)**, enabling:
 
-### `npm run build` fails to minify
+- consistent spatial perception
+- easier transition to AR rendering
+- compatibility with WebXR camera setups
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This design choice ensures the project is **AR-ready by design**, even before AR is fully integrated.
+
+---
+
+## AR Status (Work in Progress)
+
+AR functionality is **not yet implemented**.
+
+Current focus:
+- scene correctness
+- scale accuracy
+- interaction design
+
+Planned next steps:
+- WebXR camera integration
+- floor detection and object placement
+- mobile AR testing
+
+---
+
+## 🛠️ Tech Stack
+
+- **React**
+- **Three.js**
+- **@react-three/fiber**
+- **@react-three/drei**
+- **Tailwind CSS**
+- **Lucide Icons**
+
+---
+
