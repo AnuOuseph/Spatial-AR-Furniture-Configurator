@@ -5,9 +5,6 @@ import { furnitureItems, environmentPresets } from '../../data/FurnitureData.js'
 import ColorSelector from '../ColorSelector/index.js';
 import EnvironmentSelector from '../EnvironmentSelector/index.js';
 import FurnitureSelector from '../FurnitureSelector/index.js';
-import MeasurementTool from '../MeasurementTool/index.js';
-import SaveLoad from '../SaveLoad/index.js';
-import { div } from 'three/tsl';
 import { Box, ChevronUp, Dot } from 'lucide-react';
 
 const ChairViewer = ({setViewMode}) => {
@@ -17,7 +14,6 @@ const ChairViewer = ({setViewMode}) => {
   const canvasRef = useRef();
 
   const [isOpen, setIsOpen] = useState(false);
-  const [isMeasuring, setIsMeasuring] = useState(false);
 
   const FurnitureModel = () => {
     switch (selectedFurniture.type) {
