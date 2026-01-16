@@ -1,28 +1,13 @@
-import './index.css';
 
 const ARView = ({ onExit }) => {
   return (
-    <div className="ar-view">
-      <div className="ar-header">
-        <h2>AR Experience</h2>
-        <p>Point your camera at a flat surface to place the chair</p>
+    <div className=" flex flex-col items-center justify-center w-full h-screen gap-2">
+      <div className="">
+        <p className="text-md">AR support coming soon — prototype stage</p>
       </div>
-      
-      <div className="ar-preview">
-        <div className="ar-placeholder">
-          <div className="ar-chair-preview">
-            <div className="chair-3d"></div>
-          </div>
-          <p>👆 Move your phone to place the chair in your room</p>
-        </div>
-      </div>
-      
-      <div className="ar-controls">
-        <button className="exit-button" onClick={onExit}>
+      <div className="">
+        <button className="bg-black text-white text-sm py-2 px-4 rounded-xl cursor-pointer" onClick={onExit}>
           ← Back to 3D View
-        </button>
-        <button className="ar-action-button">
-          📸 Capture
         </button>
       </div>
     </div>

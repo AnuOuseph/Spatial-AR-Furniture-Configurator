@@ -1,4 +1,3 @@
-import './index.css';
 
 const ColorSelector = ({ colors, selectedColor, onColorChange }) => {
   return (

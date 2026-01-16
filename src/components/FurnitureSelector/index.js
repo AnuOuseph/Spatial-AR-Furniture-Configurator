@@ -1,4 +1,3 @@
-import { Table } from "lucide-react";
 
 const FurnitureSelector = ({ furnitureItems, selectedFurniture, onSelect }) => {
   return (
@@ -15,7 +14,7 @@ const FurnitureSelector = ({ furnitureItems, selectedFurniture, onSelect }) => {
             `}
           >
             <div className="flex items-center justify-center text-2xl">
-              {item.type === 'chair' && '💺'}
+              {item.type === 'chair' && '💺' }
               {item.type === 'table' && '🪑'}
               {item.type === 'sofa' && '🛋️'}
             </div>
