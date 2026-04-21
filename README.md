@@ -1,122 +1,71 @@
-# Spatial — Interactive 3D Furniture Configurator (Prototype)
+# Spatial — 3D Furniture Configurator
 
-**Spatial** is a web-based 3D furniture configurator that explores spatial UI patterns, real-time interaction, and AR-ready scene architecture.
+> Browser-based 3D product configurator with real-time customization, environment lighting, and AR-ready architecture.
+>
+> **[spatial-ar-furniture-configurator.vercel.app](https://spatial-ar-furniture-configurator.vercel.app/)**
 
-The project focuses on building a **production-style 3D product viewer** rather than a visual demo, with an emphasis on scalability, usability, and future AR integration.
 
-> ⚠️ This project is an early-stage prototype. AR functionality is not fully implemented yet and is planned as a future extension.
-
----
-
-## Key Features
-
-- **Interactive 3D Product Viewer**
-  - Rotate, zoom, and pan furniture models in real time
-  - Camera constraints designed for product-style interaction
-
-- **Furniture Configuration**
-  - Switch between different furniture types (chair, table, sofa)
-  - Dynamic material and color selection
-
-- **Environment Presets**
-  - Multiple HDR environments to preview products under different lighting conditions
-
-- **Real-World Scale (AR-Ready)**
-  - Furniture models designed with approximate real-world dimensions
-  - Scene architecture prepared for future WebXR / AR integration
-
-- **Product-Focused UI**
-  - Clean split layout between 3D viewer and configuration controls
-  - Inspired by real e-commerce and spatial product tools
+⚠️ Early-stage prototype. AR functionality is planned but not yet implemented.
 
 ---
 
-## Project Motivation
+## What it does
 
-The goal of this project was to explore how **3D and spatial interfaces** can be integrated into a product-oriented web application.
+Select a furniture piece, change its color, switch lighting environments, drag to rotate, scroll to zoom — all in the browser, no plugin needed. Built as an exploration of how 3D and spatial interfaces can work inside a real product context, not just as a visual demo.
 
-Rather than focusing on visual complexity, the emphasis was placed on:
-
-- scene structure and scalability  
-- interaction design for 3D products  
-- preparing a foundation suitable for **AR experiences**
-
-This project reflects an early exploration of workflows commonly used in **3D commerce, digital showrooms, and AR-enabled product platforms**.
-
----
-
-## Architecture Overview
-
-The application is structured around three core layers:
-
-### 1. 3D Scene Layer
-- Built using **react-three-fiber**
-- Modular furniture models rendered based on selected product type
-- Lighting, environment, and camera controls separated from UI logic
-
-### 2. Configuration & State Layer
-- React state manages:
-  - selected furniture
-  - material / color
-  - environment preset
-- Designed to scale toward persisted configurations (save/load)
-
-### 3. UI Layer
-- Product-style layout with:
-  - main viewer area
-  - configuration panel
-- Tailored for clarity and usability rather than experimentation
+**Core interactions:**
+- Drag to rotate / scroll to zoom — full orbit controls with product-style camera constraints
+- Real-time color and material switching applied directly to the 3D mesh
+- Environment presets: Indoor, Studio, Outdoor, Night — each changes scene lighting
+- Multiple furniture pieces with dynamic model switching
+- "View in Your Room" AR entry point — architecture in place, implementation in progress
 
 ---
 
-## Furniture Models
+## Architecture
 
-Furniture models are currently composed of primitive geometries (boxes, cylinders) to:
+The app is built around three separated layers, designed to scale toward a production configurator:
 
-- keep focus on interaction and architecture
-- allow rapid iteration
-- avoid premature optimization
+**3D Scene Layer** — react-three-fiber handles rendering. Lighting, environment maps, and camera controls are decoupled from UI logic. Furniture models use primitive geometries for now, sized to approximate real-world dimensions in meters — which makes the scene AR-compatible by design.
 
-> In a production scenario, these would be replaced with optimized GLTF assets.
+**Configuration & State Layer** — React state manages selected furniture, material/color, and environment preset. Structured to support persisted configurations (save/load) in a future version.
 
----
+**UI Layer** — Clean split layout between the 3D viewer and configuration panel, modeled after real e-commerce product tools.
 
-## Real-World Scaling
-
-All furniture elements are modeled with **approximate real-world dimensions (meters)**, enabling:
-
-- consistent spatial perception
-- easier transition to AR rendering
-- compatibility with WebXR camera setups
-
-This design choice ensures the project is **AR-ready by design**, even before AR is fully integrated.
+> In a production build, primitive geometries would be replaced with optimized GLTF assets loaded from a CDN.
 
 ---
 
-## AR Status (Work in Progress)
+## AR Status
 
-AR functionality is **not yet implemented**.
+Not yet implemented. The scene is built with WebXR compatibility in mind — real-world scale, correct camera setup — but full AR integration is a planned next step:
 
-Current focus:
-- scene correctness
-- scale accuracy
-- interaction design
-
-Planned next steps:
 - WebXR camera integration
-- floor detection and object placement
-- mobile AR testing
+- Floor detection and object placement
+- Mobile AR testing
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- **React**
-- **Three.js**
-- **@react-three/fiber**
-- **@react-three/drei**
-- **Tailwind CSS**
-- **Lucide Icons**
+| Layer | Tech |
+|---|---|
+| Framework | React |
+| 3D Engine | Three.js · react-three-fiber · @react-three/drei |
+| Styling | Tailwind CSS |
+| Icons | Lucide |
 
 ---
 
+## Running locally
+
+```bash
+git clone https://github.com/AnuOuseph/Spatial-AR-Furniture-Configurator
+cd Spatial-AR-Furniture-Configurator
+npm install
+npm run dev
+```
+
+---
+
+[Portfolio](https://anuouseph.vercel.app) · [LinkedIn](https://linkedin.com/in/anuouseph) · [GitHub](https://github.com/AnuOuseph)
