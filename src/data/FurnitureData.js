@@ -1,3 +1,4 @@
+
 export const furnitureItems = [
   {
     id: 1,
@@ -10,6 +11,12 @@ export const furnitureItems = [
       { material: "Wood", color: "#6b8fa3", name: "Ocean Blue", texture: null }, 
       { material: "Wood", color: "#3d3d3d", name: "Charcoal", texture: null }
     ],
+    textures: [
+      { name: "japanese sycamore", id: "japanese_sycamore", path: "/textures/chair/japanese_sycamore_diff_1k.jpg" },
+      { name: "plywood", id: "plywood", path: "/textures/chair/plywood_diff_1k.jpg" },
+      { name: "rosewood veneer", id: "rosewood_veneer", path: "/textures/chair/rosewood_veneer1_diff_1k.jpg" },
+      { name: "wood shutter", id: "wood_shutter", path: "/textures/chair/wood_shutter_diff_1k.jpg" }
+    ], 
     parts: []
   },
   {
@@ -23,92 +30,69 @@ export const furnitureItems = [
       { material: "Wood", color: "#6b8fa3", name: "Ocean Blue", texture: null }, 
       { material: "Wood", color: "#3d3d3d", name: "Charcoal", texture: null }
     ],
+    textures: [],
     parts: [
-  {
-    id: "boisvert_chair",
-    name: "Boisvert Chair",
-    material: "boisvert_chair",
-    colors: [
-          { name: "Ebony", color: "#d4d5d7" },
-          { name: "Walnut", color: "#5c3d2e" },
-          { name: "White", color: "#a47b58" },
-        ]
-  },
-  {
-    id: "chair_JIMI",
-    name: "JIMI Chair",
-    material: "chair_JIMI",
-    colors: [
-          { name: "Ebony", color: "#b2aca5" },
-          { name: "Walnut", color: "#5c3d2e" },
-          { name: "White", color: "#a47b58" },
-        ]
-  },
-  {
-    id: "mykonos_chair",
-    name: "Mykonos Chair",
-    material: "mykonos_chair",
-    colors: [
-          { name: "Ebony", color: "#e1c776" },
-          { name: "Walnut", color: "#5c3d2e" },
-          { name: "White", color: "#a47b58" },
-        ]
-  },
-  {
-    id: "Myrick_Chair",
-    name: "Myrick Chair",
-    material: "Myrick_Chair",
-    colors: [
-          { name: "Ebony", color: "#f5f5f0" },
-          { name: "Walnut", color: "#5c3d2e" },
-          { name: "White", color: "#a47b58" },
-        ]
-  },
-  {
-    id: "table_AGAMA",
-    name: "AGAMA Table",
-    material: "table_AGAMA",
-    colors: [
-          { name: "Ebony", color: "#f5f5f0" },
-          { name: "Walnut", color: "#5c3d2e" },
-          { name: "White", color: "#a47b58" },
-        ]
-  },
-  {
-    id: "table_Crueso",
-    name: "Crueso Table",
-    material: "table_Crueso",
-    colors: [
-          { name: "Ebony", color: "#a07a5a" },
-          { name: "Walnut", color: "#5c3d2e" },
-          { name: "White", color: "#a47b58" },
-        ]
-  }
-],
-    // parts: [
-    //   {
-    //     id: "table_a",
-    //     name: "Table A",
-    //     material: "mykonos_chair",
-    //     meshNames: ["Desk_Mesh", "Desk_Top"], // match exact mesh names from your GLB
-    //     colors: [
-    //       { name: "Ebony", color: "#a47b58" },
-    //       { name: "Walnut", color: "#5c3d2e" },
-    //       { name: "White", color: "#f5f5f0" },
-    //     ]
-    //   },
-    //   {
-    //     id: "chair_a",
-    //     name: "Chair A",
-    //     material: "Myrick_Chair",
-    //     meshNames: ["Chair_Seat", "Chair_Back"],
-    //     colors: [
-    //       { name: "Mustard", color: "#dadbdf" },
-    //       { name: "Charcoal", color: "#3d3d3d" },
-    //       { name: "Sage", color: "#8b9a7d" },
-    //     ]
-    //   }
-    // ]
+      {
+        id: "boisvert_chair",
+        name: "Boisvert Chair",
+        material: "boisvert_chair",
+        colors: [
+              { name: "Ebony", color: "#d4d5d7" },
+              { name: "Walnut", color: "#5c3d2e" },
+              { name: "White", color: "#a47b58" },
+            ]
+      },
+      {
+        id: "chair_JIMI",
+        name: "JIMI Chair",
+        material: "chair_JIMI",
+        colors: [
+              { name: "Ebony", color: "#b2aca5" },
+              { name: "Walnut", color: "#5c3d2e" },
+              { name: "White", color: "#a47b58" },
+            ]
+      },
+      {
+        id: "mykonos_chair",
+        name: "Mykonos Chair",
+        material: "mykonos_chair",
+        colors: [
+              { name: "Ebony", color: "#e1c776" },
+              { name: "Walnut", color: "#5c3d2e" },
+              { name: "White", color: "#a47b58" },
+            ]
+      },
+      {
+        id: "Myrick_Chair",
+        name: "Myrick Chair",
+        material: "Myrick_Chair",
+        colors: [
+              { name: "Ebony", color: "#f5f5f0" },
+              { name: "Walnut", color: "#5c3d2e" },
+              { name: "White", color: "#a47b58" },
+            ]
+      },
+      {
+        id: "table_AGAMA",
+        name: "AGAMA Table",
+        material: "table_AGAMA",
+        colors: [
+              { name: "Ebony", color: "#f5f5f0" },
+              { name: "Walnut", color: "#5c3d2e" },
+              { name: "White", color: "#a47b58" },
+            ]
+      },
+      {
+        id: "table_Crueso",
+        name: "Crueso Table",
+        material: "table_Crueso",
+        colors: [
+              { name: "Ebony", color: "#a07a5a" },
+              { name: "Walnut", color: "#5c3d2e" },
+              { name: "White", color: "#a47b58" },
+            ]
+      }
+    ],
   },
   {
     id: 3,
@@ -121,6 +105,7 @@ export const furnitureItems = [
       { material: "Wood", color: "#6b8fa3", name: "Ocean Blue", texture: null }, 
       { material: "Wood", color: "#3d3d3d", name: "Charcoal", texture: null }
     ],
+    textures: [],
     parts: []
   },
 ];

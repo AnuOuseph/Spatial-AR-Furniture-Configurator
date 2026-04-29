@@ -11,6 +11,7 @@ import ChairModel from '../ChairModel/index.js';
 import SofaModel from '../SofaModel/index.js';
 import FurnitureSetModel from '../FurnitureSetModel/index.js';
 import NavBar from '../Navbar/index.js';
+import TextureSelector from '../TextureSelector/index.js';
 
 const ChairViewer = ({setViewMode}) => {
   const [selectedFurniture, setSelectedFurniture] = useState(furnitureItems[0]);
@@ -20,6 +21,7 @@ const ChairViewer = ({setViewMode}) => {
         item.type,
         {
           color: item.materials[0].color,
+          texture: item.materials[0].texture,
           environment: environmentPresets[0],
           ...(item.parts
           ? Object.fromEntries(
@@ -45,13 +47,16 @@ const ChairViewer = ({setViewMode}) => {
   }
 
   const selectedColor = furnitureStates[selectedFurniture.type].color
+  const selectedTexture = furnitureStates[selectedFurniture.type].texture
   const selectedEnvironment = furnitureStates[selectedFurniture.type].environment
+
+  console.log("Furniture States:", selectedTexture?.path);
 
   const FurnitureModel = () => {
     switch (selectedFurniture.type) {
       case 'chair':
         return (
-            <ChairModel color={selectedColor} scale={0.08} />
+            <ChairModel color={selectedColor} scale={0.08} texturePath={selectedTexture?.path} />
         );
 
       case 'furniture-set':
@@ -155,6 +160,17 @@ const ChairViewer = ({setViewMode}) => {
                   </div>
                 ))}
               </div>
+            </div>
+          )}
+
+          { selectedFurniture.type === 'chair' && (
+            <div>
+              <p className='font-medium text-start mb-2'>Texture</p>
+              <TextureSelector
+                textures={selectedFurniture.textures}
+                selectedTexture={selectedTexture}
+                onTextureChange={(texture) => updateFurnitureState('texture', texture)}
+              />
             </div>
           )}
 
