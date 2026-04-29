@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Environment, Bounds, Center } from '@react-three/drei';
+import { OrbitControls, Environment, Center } from '@react-three/drei';
 import { furnitureItems, environmentPresets } from '../../data/FurnitureData.js';
 import { ChevronUp } from 'lucide-react';
 
