@@ -15,7 +15,7 @@ const FurnitureSelector = ({ furnitureItems, selectedFurniture, onSelect }) => {
           >
             <div className="flex items-center justify-center text-2xl">
               {item.type === 'chair' && '💺' }
-              {item.type === 'table' && '🪑'}
+              {item.type === 'furniture-set' && '🪑'}
               {item.type === 'sofa' && '🛋️'}
             </div>
           </div>
