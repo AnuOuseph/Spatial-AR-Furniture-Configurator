@@ -115,3 +115,9 @@ export const environmentPresets = [
   { name: "Studio", preset: "studio", color: "#29b6f6" },
   { name: "Outdoor", preset: "park", color: "#66bb6a" },
 ];
+
+export const furnitureModelPaths = {
+  'chair': '/models/chair_s.glb',
+  'sofa': '/models/sofa_s.glb',
+  'furniture-set': '/models/furniture_set_s.glb',
+}

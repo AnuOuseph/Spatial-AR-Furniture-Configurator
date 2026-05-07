@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import * as THREE from "three";
 
 export default function ChairModel({ color = "#8B5A2B", texturePath="/textures/chair/japanese_sycamore_diff_1k.jpg",  ...props }) {
-  const { scene } = useGLTF("/models/chair.glb");
+  const { scene } = useGLTF("/models/chair_s.glb");
   const texture = useTexture(texturePath);
 
   useEffect(() => {
