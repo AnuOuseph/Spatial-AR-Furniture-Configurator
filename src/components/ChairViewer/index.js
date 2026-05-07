@@ -13,8 +13,7 @@ import FurnitureSetModel from '../FurnitureSetModel/index.js';
 import NavBar from '../Navbar/index.js';
 import TextureSelector from '../TextureSelector/index.js';
 
-const ChairViewer = ({setViewMode}) => {
-  const [selectedFurniture, setSelectedFurniture] = useState(furnitureItems[0]);
+const ChairViewer = ({setViewMode, selectedFurniture, setSelectedFurniture}) => {
   const [furnitureStates, setFurnitureStates] = useState(
     Object.fromEntries(
       furnitureItems.map(item => [
@@ -56,14 +55,14 @@ const ChairViewer = ({setViewMode}) => {
     switch (selectedFurniture.type) {
       case 'chair':
         return (
-            <ChairModel color={selectedColor} scale={0.08} texturePath={selectedTexture?.path} />
+            <ChairModel color={selectedColor} scale={0.8} texturePath={selectedTexture?.path} />
         );
 
       case 'furniture-set':
         return (
           <FurnitureSetModel 
             color={selectedColor} 
-            scale={0.05}
+            scale={0.4}
             partColors={{
               boisvert_chair: furnitureStates["furniture-set"].boisvert_chair,
               chair_JIMI: furnitureStates["furniture-set"].chair_JIMI,
@@ -77,7 +76,7 @@ const ChairViewer = ({setViewMode}) => {
 
       case 'sofa':
         return (
-          <SofaModel color={selectedColor} scale={0.05} />
+          <SofaModel color={selectedColor} scale={0.5} />
         );
 
       default:

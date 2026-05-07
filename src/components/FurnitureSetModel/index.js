@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import * as THREE from "three";
 
 export default function FurnitureSetModel({ partColors = {}, color = "#8B5A2B", ...props }) {
-  const { scene } = useGLTF("/models/furniture_set.glb");
+  const { scene } = useGLTF("/models/furniture_set_s.glb");
 
   useEffect(() => {
     scene.traverse((child) => {
